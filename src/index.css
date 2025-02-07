@@ -1,34 +1,25 @@
-* {
-  box-sizing: border-box;
-}
+/* Add these font imports in your index.html head */
+/* <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"> */
 
 body {
-  font-family: sans-serif;
-  padding: 20px;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
 }
 
-.flashcards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 20px;
+.card {
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
 }
 
-.flashcards div {
-  border: 1px solid #e7e7e7;
-  background-color: #f7f7f7;
-  border-radius: 7px;
-  aspect-ratio: 2 / 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
-  cursor: pointer;
+.card.flipped {
+  transform: rotateY(180deg);
 }
 
-div.selected {
-  border: 1px solid #e03131;
-  background-color: #e03131;
-  color: #fff;
-  font-weight: bold;
+.card-front,
+.card-back {
+  backface-visibility: hidden;
+}
+
+.card-back {
+  transform: rotateY(180deg);
 }
